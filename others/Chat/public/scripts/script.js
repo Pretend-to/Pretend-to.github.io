@@ -8,7 +8,7 @@ const clearScreenButton = document.querySelector('.chat-upsidebar button[type="c
 
 
 function commit(message, username,session_id) {
-  const url = 'https://fcip.top:2888/v1/chat';
+  const url = 'https://pi.fcip.top:2888/v1/chat';
   const data = {
     session_id: session_id,
     username: username,
