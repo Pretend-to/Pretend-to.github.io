@@ -14,7 +14,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url("/static/img/left-border.png"), url("/static/img/right-border.png");
+    background-image: url("static/img/left-border.png"), url("static/img/right-border.png");
     background-repeat: repeat-y, repeat-y;
     background-position: left top, right top;
     background-size: 20% auto, 20% auto;
