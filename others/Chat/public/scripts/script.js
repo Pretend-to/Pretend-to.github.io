@@ -53,7 +53,7 @@ function commit(message, username,session_id) {
 
         if (result === 'DONE') {
           messages.forEach(msg => {
-            const parsedHtml = parseMarkdown(msg);
+            //const parsedHtml = parseMarkdown(msg);
             const messageElement = document.createElement('li');
             messageElement.classList.add('chat-message', 'received');
             messageElement.innerHTML = msg;
