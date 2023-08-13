@@ -8,7 +8,7 @@ const clearScreenButton = document.querySelector('.chat-upsidebar button[type="c
 
 
 function commit(message, username,session_id) {
-  const url = 'https://api.fcip.xyz/chat/v1/chat';
+  const url = 'https://fcip.top:1888/v1/chat';
   const data = {
     session_id: session_id,
     username: username,
@@ -57,9 +57,9 @@ function commit(message, username,session_id) {
             const messageElement = document.createElement('li');
             messageElement.classList.add('chat-message', 'received');
             messageElement.innerHTML = msg;
-            chatWindow.appendChild(parsedHtml);
-            console.log("以markdown格式渲染")
-            //chatWindow.appendChild(messageElement);
+            //chatWindow.appendChild(parsedHtml);
+            //console.log("以markdown格式渲染")
+            chatWindow.appendChild(messageElement);
             scrollChatWindowToBottom();
           });
 
