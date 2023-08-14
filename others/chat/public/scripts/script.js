@@ -7,6 +7,16 @@ const submitNameButton = document.querySelector('.chat-function button[type="set
 const clearScreenButton = document.querySelector('.chat-upsidebar button[type="clean"]');
 
 
+window.onload = () => {
+    const cachedChatHistory = localStorage.getItem('chatHistory');
+    if (cachedChatHistory) {
+      console.log("找到历史记录");
+      chatWindow.innerHTML = cachedChatHistory;
+    }
+    scrollChatWindowToBottom();
+    statusElement.textContent = 'FCIP GPT';
+  };
+
 function commit(message, username,session_id) {
   const url = 'https://pi.fcip.top:2888/v1/chat';
   const data = {
@@ -20,17 +30,6 @@ function commit(message, username,session_id) {
   statusElement.textContent = '对方正在输入......';
 
   localStorage.setItem('temperSessionid', session_id);
-
-  window.onload = () => {
-    const cachedChatHistory = localStorage.getItem('chatHistory');
-    if (cachedChatHistory) {
-      console.log("找到历史记录");
-      chatWindow.innerHTML = cachedChatHistory;
-    }
-    scrollChatWindowToBottom();
-    statusElement.textContent = 'FCIP GPT';
-  };
-
 
   fetch(url, {
     method: 'POST',
