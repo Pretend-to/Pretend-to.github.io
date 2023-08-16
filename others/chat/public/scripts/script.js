@@ -146,7 +146,7 @@ function generateRandomId() {
 }
 
 submitButton.addEventListener('click', (e) => {
-  if ( chatInput ) {
+  if (chatInput.value) {
     e.preventDefault();
     sendMessage();
   }else{
@@ -156,7 +156,7 @@ submitButton.addEventListener('click', (e) => {
 
 chatInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter' && e.ctrlKey ) {
-    if(chatInput){
+    if(chatInput.value){
       e.preventDefault();
       sendMessage();
     }else{
