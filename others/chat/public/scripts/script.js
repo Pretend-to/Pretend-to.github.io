@@ -73,6 +73,7 @@ function commit(message, username,session_id) {
     .catch(error => {
       console.error('Error:', error);
     });
+    scrollChatWindowToBottom();
 }
 
 function parseMarkdown(markdownText) {
@@ -145,14 +146,23 @@ function generateRandomId() {
 }
 
 submitButton.addEventListener('click', (e) => {
-  e.preventDefault();
-  sendMessage();
+  if ( chatInput ) {
+    e.preventDefault();
+    sendMessage();
+  }else{
+    systemMessage("输入不得为空");
+  }
 });
 
 chatInput.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' && e.ctrlKey) {
-    e.preventDefault();
-    sendMessage();
+  if (e.key === 'Enter' && e.ctrlKey ) {
+    if(chatInput){
+      e.preventDefault();
+      sendMessage();
+    }else{
+      systemMessage("输入不得为空");
+    }
+
   }
 });
 
