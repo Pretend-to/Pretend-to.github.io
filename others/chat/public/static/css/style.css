@@ -6,13 +6,16 @@ body, ul {
 }
 
 body {
-  height: 100%;
-  width: 100%;
+  height: 98%;
+  width: 98%;
   background-color: #EDEDED;
 }
 
 /* 设置聊天容器占满整个视口的高度和宽度 */
 .chat-container {
+  position: relative;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* 分配剩余空间 */
@@ -23,12 +26,13 @@ body {
 
 /* 样式化聊天窗口 */
 .chat-window {
-  flex-grow: 1; /* 允许 chat-window 自动扩展以填充剩余空间 */
+  /* flex-grow: 1; 允许 chat-window 自动扩展以填充剩余空间 */
   max-height: calc(100% - 55px); /* 限制 chat-window 的最大高度 */
   width: 100%;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  position: relative; /* 添加相对定位 */
   padding: 10px;
   padding-bottom: 40px; /* 添加向下的padding */
   padding-top: 60px; /* 添加向下的padding */
@@ -143,7 +147,7 @@ body {
   white-space: pre-wrap;
   margin-bottom: 20px;
   align-self: flex-end;  
-  right: 70px;
+  right: 60px;
   padding: 10px;
   border-radius: 5px;
   max-width: 75%;
@@ -208,7 +212,7 @@ body {
 
 /* 样式化输入字段 */
 .chat-input input[type="text"] {
-  padding: 0px;
+  padding: 2px 5px; /* 修改padding的值 */
   border: 1px solid #ccc;
   border-radius: 3px;
   width: 250px;
@@ -216,14 +220,14 @@ body {
   min-height: 30px;
   resize: none;
   white-space: pre-wrap;
-  margin: 0 10px; /* 添加左右边距 */
+  margin: 0 3px; /* 添加左右边距 */
   font-size: 16px;
 }
 
 /* 输入框获取焦点时去除边框样式 */
 .chat-input input[type="text"]:focus {
   outline: none;
-  border: 1px solid #ccc;
+  border: 0px solid #ccc;
 }
 
 /* 样式化聊天功能按钮 */
@@ -255,13 +259,11 @@ body {
   color: #c4ffc7;
 }
 
-
-/* 样式化聊天上侧栏 */
 .chat-upsidebar {
-  position: fixed; /* 将定位设置为固定 */
-  top: 0; /* 将上边距设置为0，使其固定在页面顶部 */
+  position: fixed;
+  top: 0;
   left: 0;
-  z-index: 999; /* 确保 .chat-upsidebar 在其他内容之上 */
+  z-index: 999;
   display: flex;
   align-items: center;
   height: 30px;
@@ -273,24 +275,28 @@ body {
 }
 
 .status {
-  display: inline;
-  font-size: 18px; /* 设置大号字体大小 */
-  text-align: center; /* 居中对齐 */
-  flex-grow: 1; /* 允许元素自动扩展宽度以填充剩余空间 */
-  position: relative; /* 添加相对定位 */
-  z-index: 1; /* 设置较高的层级，确保在其他内容之上 */
+  position: relative;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  text-align: center;
+  z-index: 1;
 }
 
 /* 样式化 "清屏" 按钮 */
 .chat-upsidebar button[type="clean"] {
   display: inline;
   position: relative;
+  right: 2%;
   cursor: pointer;
-  right: 30px; /* 将按钮推到右边框 */
   border: none;
   background-color: transparent;
-  z-index: 2; /* 设置较高的层级，确保在其他内容之上 */
 }
+
 
 /* 鼠标悬停在 "清屏" 按钮上的效果 */
 .chat-upsidebar button[type="clean"]:hover {
@@ -346,7 +352,6 @@ body {
 
   .chat-input input[type="text"] {
     width: 220px;
-    margin: 0 15px; /* 添加左右边距 */
     font-size: 15px; /* 调整字体大小 */
   }
 }
