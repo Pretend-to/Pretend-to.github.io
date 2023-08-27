@@ -185,6 +185,11 @@ clearScreenButton.addEventListener('click', (e) => {
   clearScreen();
 });
 
+window.addEventListener('resize', () => {
+  scrollChatWindowToBottom();
+});
+
+
 function getsessionId() {
   let session_id = localStorage.getItem('temperSessionId');
   if (!session_id) {
