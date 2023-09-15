@@ -177,7 +177,7 @@ body {
 }
 
 /* 将子元素固定在一行显示 */
-.chat-downsidebar > * {
+.chat-downsidebar {
   flex: none;
 }
 
