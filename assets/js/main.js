@@ -89,5 +89,5 @@ var iUp = (function () {
 	btnMobileMenu.classList.toggle('fadeIn');
   });
   
-  setCustomImage('https://img1.imgtp.com/2023/07/17/NrSThzsQ.jpg');
+  setCustomImage('https://pi.fcip.top:8848/upload/background2.jpg');
   
