@@ -152,6 +152,7 @@ submitButton.addEventListener('click', (e) => {
   }else{
     systemMessage("输入不得为空");
   }
+  chatInput.focus();
 });
 
 chatInput.addEventListener('keydown', (e) => {
@@ -189,6 +190,10 @@ window.addEventListener('resize', () => {
   scrollChatWindowToBottom();
 });
 
+window.addEventListener('input', () => {
+  scrollChatWindowToBottom();
+});
+
 
 function getsessionId() {
   let session_id = localStorage.getItem('temperSessionId');
@@ -201,9 +206,19 @@ function getsessionId() {
   return session_id;
 }
 
-// Scroll chat window to the bottom
 function scrollChatWindowToBottom() {
   window.scrollTo(0, document.body.scrollHeight);
+  chatWindow.scrollTop = chatWindow.scrollHeight;
+
+  const currentVh = window.innerHeight;
+  const vhMessage = `当前视口高度：${currentVh}px`;
+
+  const vhMessageElement = document.createElement('li');
+  vhMessageElement.classList.add('system-message');
+  vhMessageElement.textContent = vhMessage;
+
+  chatWindow.appendChild(vhMessageElement);
 }
+
 
 chatInput.focus();

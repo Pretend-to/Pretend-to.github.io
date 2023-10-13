@@ -1,0 +1,116 @@
+body {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* 阻止滚动条出现在 body 上 */
+  }
+  
+.chat-container{
+    overflow: hidden; /* 不显示滚动条 */
+    max-height: 100%;
+    height: 100%; /* 使用视口高度作为高度 */
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+    justify-content: space-between
+}
+.chat-upsidebar {
+    position: fixed;
+    height: 50px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    background-color: #EDEDED;
+  }
+  
+
+.chat-upsidebar button {
+    /* 共享的样式属性 */
+    border: none; /* 或 border: 0; */
+    margin: 2px;
+  }
+
+.return {
+    padding-left: 8px;
+    flex-grow: 1;
+    justify-content: flex-start;
+}
+.status{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+.bo-clean{
+    padding-right: 8px;
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+.chat-window{
+    padding-top: 50px;
+    display: flex;
+    overflow: auto; /* 显示滚动条 */
+    max-height: calc(100vh - 100px); /* 使用视口高度减去上下两个 sidebar 的高度 */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+}
+.chat-downsidebar{
+    width: inherit;
+    background-color: #EDEDED;
+    max-height: 50px;
+    flex: 1 0 50px;
+}
+.chat-function{
+    display: flex;
+    padding: 0 8px;
+    height: 100%;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-grow: 1;
+}
+.chat-input {
+    display: flex;
+    border: 0px solid #ccc;
+    background-color: #ffffff;
+    flex-grow: 1;
+    border-radius: 4px;
+    min-height: 72%;
+    min-width: 1%;
+  }
+  
+  .chat-input input {
+    flex-grow: 1;
+    border: 0px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+    border-radius: 6px;
+  }
+  
+
+.chat-function button {
+    /* 共享的样式属性 */
+    border: none; /* 或 border: 0; */
+  }
+/* 样式化聊天功能按钮 */
+.chat-function button[type="submit"]{
+    white-space: nowrap;
+    padding: 5px 10px;
+    background-color: #07c160;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 0 6px;
+  }
+  
+  /* 鼠标悬停在提交按钮上的效果 */
+  .chat-function button[type="submit"]:active{
+    background-color: #069f50;
+  }
