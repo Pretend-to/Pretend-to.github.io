@@ -89,5 +89,5 @@ var iUp = (function () {
 	btnMobileMenu.classList.toggle('fadeIn');
   });
   
-  setCustomImage('https://pi.fcip.top:8848/upload/background2.jpg');
+  setCustomImage('https://blog.fcip.top/upload/background2.jpg');
   
